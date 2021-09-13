@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useForm } from "react-hook-form";
+import { Tabla } from './Tabla';
 
 export const Usuario = () => {
 
@@ -73,38 +74,11 @@ export const Usuario = () => {
 
                 <button type="submit" class="btn btn-success"> Ingresar Usuario </button>
             </form>
-            <div className="mt-5">
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col">Ocupacion </th>
-                            <th scope="col">Mensaje</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    {
-                    usuario.map((item, index) =>
-                        <tr>
-                            <th scope="row">{index+1}</th>
-                            <td>{item.nombre}</td>
-                            <td>{item.edad}</td>
-                            <td>{item.ocupacion}</td>
-                            <td>{item.mensaje}</td>
-                        </tr>
-                    )
-                    }
-                        
-                        
-                    </tbody>
-                </table>
-
-                
-            </div>
-
+            <Tabla usuarios={usuario}/>
         </Fragment>
+
+        
     )
+    
 }
+
